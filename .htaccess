@@ -1,0 +1,31 @@
+RewriteEngine on
+
+# Remove trailing slash from urls
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Redirect to domain without www
+# RewriteCond %{HTTPS} off
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule .* http://%1%{REQUEST_URI} [R=301,L]
+# Same for HTTPS:
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+# Removing file extension
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Redirect /index to root
+RewriteCond %{THE_REQUEST} ^.*/index
+RewriteRule ^(.*)index.php$ /$1 [R=301,L]
+
+# Prevent viewing of htaccess file
+<Files .htaccess>
+  order allow,deny
+  deny from all
+</Files>
+
+# Prevent directory listings
+Options All -Indexes

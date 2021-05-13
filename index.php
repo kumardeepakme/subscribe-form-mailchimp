@@ -28,14 +28,35 @@
     }
 
     .subscribe__text {
-      width: 35%;
+      width: 90%;
+    }
+    @media only screen and (min-width: 48em) {
+      .subscribe__text {
+        width: 55%;
+      }
+    }
+    @media only screen and (min-width: 62em) {
+      .subscribe__text {
+        width: 45%;
+      }
+    }
+    @media only screen and (min-width: 75em) {
+      .subscribe__text {
+        width: 35%;
+      }
     }
 
     .subscribe__text .subscribe__text--heading {
+      display: flex;
+      align-items: center;
       font-size: 50px;
       font-weight: 100;
       line-height: 1;
       margin: 0 0 15px;
+    }
+
+    .subscribe__text .subscribe__text--heading img {
+      height: 50px;
     }
 
     .subscribe__text .subscribe__text--desc {
@@ -48,7 +69,22 @@
     .subscribe__form {
       display: flex;
       align-items: center;
-      width: 35%;
+      width: 90%;
+    }
+    @media only screen and (min-width: 48em) {
+      .subscribe__form {
+        width: 55%;
+      }
+    }
+    @media only screen and (min-width: 62em) {
+      .subscribe__form {
+        width: 45%;
+      }
+    }
+    @media only screen and (min-width: 75em) {
+      .subscribe__form {
+        width: 35%;
+      }
     }
 
     .subscribe__form .subscribe__form--input {
@@ -119,7 +155,7 @@
 
   <div class="subscribe">
     <div class="subscribe__text">
-      <h1 class="subscribe__text--heading">Subscribe 🎁</h1>
+      <h1 class="subscribe__text--heading"><span>Subscribe</span>&nbsp;<img src="wrapped-gift_1f381.png" alt="gift"></h1>
       <p class="subscribe__text--desc">Join the family and get latest news, updates and special offers delivered to your inbox.</p>
     </div>
 
