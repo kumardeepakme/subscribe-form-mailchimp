@@ -1,0 +1,7 @@
+{
+  "name": "kumardeepakxyz/subscribe-form-mailchimp",
+  "description": "Build a subscribe form using PHP, Javascript, and the Mailchimp API.",
+  "require": {
+    "mailchimp/marketing": "^3.0"
+  }
+}
